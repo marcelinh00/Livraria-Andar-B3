@@ -1,0 +1,305 @@
+body {
+  background-color: #6e4b2a; /* marrom escuro */
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px;
+  color: #f5e6c8; /* bege claro */
+  font-family: 'Lora', serif;
+}
+
+section {
+  background-color: #f5e6c8; /* bege claro */
+  border-radius: 8px;
+  width: 790px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 10px;
+  box-shadow: 5px 5px 10px rgba(110, 75, 42, 0.3); /* sombra marrom */
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 25px;
+  color: #7c5c3b; /* marrom médio */
+}
+
+h3#titleAllBooks {
+  margin-bottom: 30px;
+}
+
+form#register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+form#register input+label {
+  margin-top: 10px;
+}
+
+label {
+  font-size: 16px;
+  color: #7c5c3b; /* marrom médio */
+}
+
+input {
+  margin-top: 2px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  padding: 4px;
+  font-size: 16px;
+  background-color: #fffaf3; /* quase branco/bege */
+  width: 300px;
+  box-shadow: 2px 2px 5px rgba(110, 75, 42, 0.2);
+  outline: none;
+  color: #4b2e13; /* marrom escuro */
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+textarea {
+  margin-top: 2px;
+  font-size: 15px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-color: #fffaf3;
+  box-shadow: 2px 2px 5px rgba(110, 75, 42, 0.2);
+  resize: none;
+  outline: none;
+  color: #4b2e13;
+}
+
+input:focus, textarea:focus {
+  border: 2px solid #a67c52; /* marrom claro */
+}
+
+button {
+  margin-top: 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #a67c52; /* marrom claro */
+  color: #fffaf3;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  outline: none;
+}
+
+button:hover {
+  background-color: #7c5c3b; /* marrom médio */
+  cursor: pointer;
+}
+
+div#listOfBooksSearch {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div#listOfAllBooks p#emptyBookList {
+  display: block;
+  text-align: center;
+  grid-column: 1 / 5;
+  color: #7c5c3b;
+}
+
+div#foundBooks, div#listOfAllBooks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  margin: 10px;
+}
+
+div#foundBooks div, div#listOfAllBooks div {
+  display: flex;
+  flex-direction: column;
+  background-color: #fffaf3;
+  font-size: 15px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px rgba(110, 75, 42, 0.3);
+  color: #7c5c3b;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+}
+
+p#bookTitle {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+  color: #4b2e13;
+}
+
+div#foundBooks img, div#listOfAllBooks img {
+  height: 130px;
+  width: 90px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #a67c52;
+  background: #f5e6c8;
+}
+
+button#btnSearch::before{
+  content: '\f002';
+  color: #fffaf3;
+  position: relative;
+  font-family: FontAwesome;
+  font-size: 15px;
+  right: 3px;
+}
+
+button#btnSinopsys {
+  background-color: #7c5c3b;
+}
+
+button#btnSinopsys:hover {
+  background-color: #a67c52;
+}
+
+button#btnSinopsys::before {
+  content: '\f02d';
+  color: #fffaf3;
+  position: relative;
+  font-family: FontAwesome;
+  font-size: 16px;
+  right: 5px;
+}
+
+button#btnRemove {
+  background-color: #8b5c2a;
+}
+
+button#btnRemove:hover {
+  background-color: #a67c52;
+}
+
+button#btnRemove::before {
+  content: '\f1f8';
+  color: #fffaf3;
+  position: relative;
+  font-family: FontAwesome;
+  font-size: 16px;
+  right: 5px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(110, 75, 42, 0.7);
+}
+
+.modal-content {
+  background-color: #fffaf3;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #a67c52;
+  width: 61%;
+  border-radius: 8px;
+  font-family: 'Lora', serif;
+  color: #4b2e13;
+}
+
+#btnCloseModal {
+  color: #a67c52;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#btnCloseModal:hover, #btnCloseModal:focus {
+  color: #4b2e13;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Carrossel de Livros */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0 40px 0;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 340px;
+  height: 260px;
+  background: #ede3d1;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(110, 75, 42, 0.2);
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.carousel-item {
+  min-width: 340px;
+  max-width: 340px;
+  text-align: center;
+  padding: 15px 10px;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 110px;
+  height: 160px;
+  object-fit: cover;
+  border: 2px solid #a67c52;
+  border-radius: 6px;
+  background: #f5e6c8;
+  margin-bottom: 10px;
+}
+
+.carousel-item h4 {
+  margin: 5px 0 2px 0;
+  color: #6e4b2a;
+  font-family: 'Lora', serif;
+  font-size: 18px;
+}
+
+.carousel-item p {
+  color: #7c5c3b;
+  font-size: 15px;
+}
+
+.carousel-btn {
+  background: #a67c52;
+  color: #fffaf3;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.2s;
+}
+
+.carousel-btn:hover {
+  background: #7c5c3b;
+}
